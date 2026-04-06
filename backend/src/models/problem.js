@@ -16,10 +16,35 @@ const problemSchema = new Schema({
         required:true,
     },
     tags:{
-        type:String,
-        enum:['array','linkedList','graph','dp'],
-        required:true
-    },
+    type: String,
+    enum: [
+        'array',
+        'string',
+        'hash-table',
+        'dynamic-programming',
+        'math',
+        'sorting',
+        'greedy',
+        'depth-first-search',
+        'binary-search',
+        'breadth-first-search',
+        'tree',
+        'matrix',
+        'two-pointers',
+        'bit-manipulation',
+        'stack',
+        'graph',
+        'heap',
+        'sliding-window',
+        'backtracking',
+        'linked-list',
+        'recursion',
+        'divide-and-conquer',
+        'queue',
+        'dp'
+    ],
+    required: true
+},
     visibleTestCases:[
         {
             input:{
@@ -70,6 +95,19 @@ const problemSchema = new Schema({
                 required:true,
             },
             completeCode:{
+                type:String,
+                required:true
+            }
+        }
+    ],
+
+    codeWrapper:[
+        {
+            language:{
+                type:String,
+                required:true,
+            },
+            wrapperCode:{
                 type:String,
                 required:true
             }

@@ -14,9 +14,8 @@ const validate = (data)=>{
     if(!validator.isEmail(data.emailId))
         throw new Error("Invalid Email");
 
-    // require a minimum length of 8 to match the frontend form
-    if(!validator.isLength(data.password, { min: 8 }))
-        throw new Error("Weak Password: password must be at least 8 characters long");
+    if(!validator.isStrongPassword(data.password))
+        throw new Error("Week Password");
 }
 
 module.exports = validate;

@@ -36,10 +36,15 @@ const userSchema = new Schema({
             type:Schema.Types.ObjectId,
             ref:'problem'
         }],
+        default: []
     },
     password:{
         type:String,
         required: true
+    },
+    isEmailVerified:{
+        type: Boolean,
+        default: false
     }
 },{
     timestamps:true
